@@ -3,6 +3,7 @@
         <h2> {{ $comic->title }} </h2>
         <img src="{{$comic->thumb}}" alt="{{$comic->series}}">
         <p>{{ $comic->price }} - <span>{{ $comic->series }}</span></p> 
+        <p><a href="{{ route('comics.show', $comic->id) }}">View more infos</a></p>
     </div>
 
 @empty
