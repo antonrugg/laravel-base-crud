@@ -97,7 +97,7 @@ class ComicController extends Controller
 
         $comic->fill($comics);
 
-        $comic->save();
+        $comic->update();
 
         return redirect()->route('comics.index', compact('comic'));
     }
@@ -110,6 +110,9 @@ class ComicController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+        $comic->delete();
+
+        return redirect()->route('comics.index', compact('comic'));
     }
 }
