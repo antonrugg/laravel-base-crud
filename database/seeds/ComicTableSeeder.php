@@ -17,15 +17,19 @@ class ComicTableSeeder extends Seeder
         foreach ($comics as $comic) {
             $newComic = new Comic();
 
-            $newComic->title = $comic['title'];
-            $newComic->description = $comic['description'];
-            $newComic->thumb = $comic['thumb'];
-            $newComic->price = $comic['price'];
-            $newComic->series = $comic['series'];
-            $newComic->sale_date = $comic['sale_date'];
-            $newComic->type = $comic['type'];
-
+            // $newComic->title = $comic['title'];
+            // $newComic->description = $comic['description'];
+            // $newComic->thumb = $comic['thumb'];
+            // $newComic->price = $comic['price'];
+            // $newComic->series = $comic['series'];
+            // $newComic->sale_date = $comic['sale_date'];
+            // $newComic->type = $comic['type'];
+            $newComic->fill($comic);
             $newComic->save();
+
+            //Quando i nomi dei campi che dobbiamo inserire sono uguali a quelli delle tabelle a cui e' associato il model
+            // possiamo direttamente passare un array associativo (vedi model associato!)
+            //$fillable = [.........., ....., ......,]
         }
 
     }
