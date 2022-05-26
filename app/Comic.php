@@ -22,5 +22,5 @@ class Comic extends Model
 
 
             //Quando i nomi dei campi che dobbiamo inserire sono uguali a quelli delle tabelle a cui e' associato il model
-            // possiamo direttamente passare un array associativo
+            // possiamo direttamente passare un array associativo VEDI SEEDER
             //$fillable = [.........., ....., ......,]
